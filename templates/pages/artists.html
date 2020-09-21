@@ -1,0 +1,23 @@
+{% extends 'layouts/main.html' %} {% block title %}Fyyur | Artists{% endblock %}
+{% block content %}
+<ul class="list-inline">
+  <li><h1>Artists</h1></li>
+  <li class="pull-right">
+    <a href="/artists/create"><button class="btn btn-warning btn-lg">Post a new artist</button></a>
+  </li>
+</ul>
+
+<hr style="border: 1px solid" />
+<ul class="items">
+  {% for artist in artists %}
+  <li>
+    <a href="/artists/{{ artist.id }}">
+      <i class="fas fa-users"></i>
+      <div class="item">
+        <h5>{{ artist.name }}</h5>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
